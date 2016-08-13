@@ -10,9 +10,8 @@ public class ProductDao {
 
     private Connection getConnection() throws Exception {
 
-    Class.forName("com.mysql.jdbc.Driver").newInstance();
-
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/products_db","root","root");
+        Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
+        return DriverManager.getConnection( "jdbc:derby://172.27.12.108:1527/myDB10;user=me;password=mine");
     }
 
     public List<Integer> getProductIds() throws Exception{
