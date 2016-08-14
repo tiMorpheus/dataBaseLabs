@@ -1,5 +1,6 @@
 package JunitTest;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,6 +19,20 @@ public class CustomMathTest {
 
         assertEquals(expResult, result);
         fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testDivision(){
+        System.out.println("division");
+        int x = 0;
+        int y = 0;
+        int expResult = 0;
+        try {
+            expResult = CustomMath.division(x, y);
+            fail("Exception expected");
+        }catch (IllegalArgumentException e){
+            System.out.println("pass");
+        }
     }
 
 }
